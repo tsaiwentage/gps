@@ -1,7 +1,7 @@
 <launch>
   <!-- Use the following for ROS hydro or later: <include file="$(find gazebo_ros)/launch/empty_world.launch"> -->
-  <include file="/opt/ros/indigo/share/gazebo_ros/launch/empty_world.launch">
-    </include>
-  <include file="/opt/ros/indigo/share/pr2_gazebo/launch/pr2_no_controllers.launch" />
+  <!-- <include file="/opt/ros/indigo/share/gazebo_ros/launch/empty_world.launch">
+    </include> -->
+  <include file="/opt/ros/indigo/share/pr2_gazebo/launch/pr2_empty_world.launch" />
 
 </launch>

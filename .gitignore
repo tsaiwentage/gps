@@ -97,5 +97,6 @@ experiments/**/log.txt
 experiments/**/*.png
 .previous_experiment
 
-# .idea
+# config
 /.idea/
+/.vscode/
