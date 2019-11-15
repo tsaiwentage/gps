@@ -13,11 +13,11 @@ case $1 in
         if [ -z $2 ];then
             echo "run training"
             python /data/gps/python/gps/gps_main.py \
-            pr2_example
+            pr2
         elif [ $2 = "-t" ];then
             echo "target setup"
             python /data/gps/python/gps/gps_main.py \
-            pr2_example -t
+            pr2 -t
         fi
         ;;
     3)
