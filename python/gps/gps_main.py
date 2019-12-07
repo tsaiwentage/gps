@@ -210,7 +210,9 @@ class GPSMain(object):
         if self.gui:
             self.gui.set_status_text('Calculating.')
             self.gui.start_display_calculating()
+        # iteration start
         self.algorithm.iteration(sample_lists)
+        
         if self.gui:
             self.gui.stop_display_calculating()
 

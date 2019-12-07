@@ -10,6 +10,7 @@ import numpy as np
 
 from gps import __file__ as gps_filepath
 from gps.agent.ros.agent_ros import AgentROS
+
 from gps.algorithm.algorithm_traj_opt import AlgorithmTrajOpt
 from gps.algorithm.cost.cost_fk import CostFK
 from gps.algorithm.cost.cost_action import CostAction
@@ -19,6 +20,8 @@ from gps.algorithm.dynamics.dynamics_lr_prior import DynamicsLRPrior
 from gps.algorithm.dynamics.dynamics_prior_gmm import DynamicsPriorGMM
 from gps.algorithm.traj_opt.traj_opt_lqr_python import TrajOptLQRPython
 from gps.algorithm.policy.lin_gauss_init import init_lqr
+from gps.algorithm.policy_opt.policy_opt_tf import PolicyOptTf
+
 from gps.gui.target_setup_gui import load_pose_from_npz
 from gps.proto.gps_pb2 import JOINT_ANGLES, JOINT_VELOCITIES, \
         END_EFFECTOR_POINTS, END_EFFECTOR_POINT_VELOCITIES, ACTION, \
@@ -183,7 +186,9 @@ algorithm['traj_opt'] = {
     'type': TrajOptLQRPython,
 }
 
-algorithm['policy_opt'] = {}
+algorithm['policy_opt'] = {
+    'type': PolicyOptTf,
+}
 
 config = {
     'iterations': algorithm['iterations'],
