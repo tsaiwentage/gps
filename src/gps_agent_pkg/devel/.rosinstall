@@ -1,2 +1,6 @@
 - setup-file:
+<<<<<<< HEAD
     local-name: /data/gps/src/gps_agent_pkg/devel/setup.sh
+=======
+    local-name: /gps/src/gps_agent_pkg/devel/setup.sh
+>>>>>>> 402d32074f4061886bcd31c8d6e4da196a7e26dd

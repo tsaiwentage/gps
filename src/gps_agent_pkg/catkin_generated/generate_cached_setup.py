@@ -19,9 +19,15 @@ except ImportError:
             break
     from catkin.environment_cache import generate_environment_script
 
+<<<<<<< HEAD
 code = generate_environment_script('/data/gps/src/gps_agent_pkg/devel/env.sh')
 
 output_filename = '/data/gps/src/gps_agent_pkg/catkin_generated/setup_cached.sh'
+=======
+code = generate_environment_script('/gps/src/gps_agent_pkg/devel/env.sh')
+
+output_filename = '/gps/src/gps_agent_pkg/catkin_generated/setup_cached.sh'
+>>>>>>> 402d32074f4061886bcd31c8d6e4da196a7e26dd
 with open(output_filename, 'w') as f:
     #print('Generate script for cached setup "%s"' % output_filename)
     f.write('\n'.join(code))

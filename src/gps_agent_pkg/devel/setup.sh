@@ -8,7 +8,11 @@
 
 # since this file is sourced either use the provided _CATKIN_SETUP_DIR
 # or fall back to the destination set at configure time
+<<<<<<< HEAD
 : ${_CATKIN_SETUP_DIR:=/data/gps/src/gps_agent_pkg/devel}
+=======
+: ${_CATKIN_SETUP_DIR:=/gps/src/gps_agent_pkg/devel}
+>>>>>>> 402d32074f4061886bcd31c8d6e4da196a7e26dd
 _SETUP_UTIL="$_CATKIN_SETUP_DIR/_setup_util.py"
 unset _CATKIN_SETUP_DIR
 
