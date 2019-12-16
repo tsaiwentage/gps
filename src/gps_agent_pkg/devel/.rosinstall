@@ -1,2 +1,2 @@
 - setup-file:
-    local-name: /home/tsai/PycharmProjects/gps/src/gps_agent_pkg/devel/setup.sh
+    local-name: /gps/src/gps_agent_pkg/devel/setup.sh
