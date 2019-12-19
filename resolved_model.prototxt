@@ -1,0 +1,89 @@
+name: ""
+layer {
+  name: "Python1"
+  type: "Python"
+  top: "Python1"
+  top: "Python2"
+  top: "Python3"
+  python_param {
+    module: "policy_layers"
+    layer: "PolicyDataLayer"
+    param_str: "{\"shape\": [{\"dim\": [25, 32]}, {\"dim\": [25, 7]}, {\"dim\": [25, 7, 7]}]}"
+  }
+}
+layer {
+  name: "InnerProduct1"
+  type: "InnerProduct"
+  bottom: "Python1"
+  top: "InnerProduct1"
+  inner_product_param {
+    num_output: 42
+    weight_filler {
+      type: "gaussian"
+      std: 0.00999999977648
+    }
+    bias_filler {
+      type: "constant"
+      value: 0.0
+    }
+  }
+}
+layer {
+  name: "ReLU1"
+  type: "ReLU"
+  bottom: "InnerProduct1"
+  top: "InnerProduct1"
+}
+layer {
+  name: "InnerProduct2"
+  type: "InnerProduct"
+  bottom: "InnerProduct1"
+  top: "InnerProduct2"
+  inner_product_param {
+    num_output: 42
+    weight_filler {
+      type: "gaussian"
+      std: 0.00999999977648
+    }
+    bias_filler {
+      type: "constant"
+      value: 0.0
+    }
+  }
+}
+layer {
+  name: "ReLU2"
+  type: "ReLU"
+  bottom: "InnerProduct2"
+  top: "InnerProduct2"
+}
+layer {
+  name: "InnerProduct3"
+  type: "InnerProduct"
+  bottom: "InnerProduct2"
+  top: "InnerProduct3"
+  inner_product_param {
+    num_output: 7
+    weight_filler {
+      type: "gaussian"
+      std: 0.00999999977648
+    }
+    bias_filler {
+      type: "constant"
+      value: 0.0
+    }
+  }
+}
+layer {
+  name: "Python4"
+  type: "Python"
+  bottom: "InnerProduct3"
+  bottom: "Python2"
+  bottom: "Python3"
+  top: "Python4"
+  loss_weight: 1.0
+  python_param {
+    module: "policy_layers"
+    layer: "WeightedEuclideanLoss"
+  }
+}
